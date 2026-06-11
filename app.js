@@ -272,6 +272,9 @@ async function init(){
 
   const manualMaterial = document.querySelector('#addSlabForm input[name="material_name"]');
   if(manualMaterial){
+    manualMaterial.setAttribute('type','text');
+    manualMaterial.setAttribute('inputmode','text');
+    manualMaterial.removeAttribute('pattern');  
     manualMaterial.addEventListener('input', renderMaterialSuggestions);
     manualMaterial.addEventListener('focus', renderMaterialSuggestions);
     manualMaterial.addEventListener('blur', ()=>setTimeout(hideMaterialSuggestions, 120));
